@@ -28,14 +28,14 @@ import random
 from datetime import datetime
 import string
 
-from Datastore.MySQL import MySQL
-dns = {
-    'user': 'mysql',
-    'host': 'localhost',
-    'password': 'keisuke',
-    'database': 'kaggle'
-}
-db = MySQL(**dns)
+# from Datastore.MySQL import MySQL
+# dns = {
+#     'user': 'mysql',
+#     'host': 'localhost',
+#     'password': 'keisuke',
+#     'database': 'kaggle'
+# }
+# db = MySQL(**dns)
 
 app = Flask(__name__)
 
@@ -52,33 +52,33 @@ def search():
     renderpage = render_template("search.html")
     return renderpage
 
-@app.route('/searchtest', methods=['GET', 'POST'])
-def searchtest():
-    props = {'title': 'Step-by-Step Flask - hello', 'msg': 'What you want'}
-    html = render_template('searchtest.html', props=props)
-    return html
+# @app.route('/searchtest', methods=['GET', 'POST'])
+# def searchtest():
+#     props = {'title': 'Step-by-Step Flask - hello', 'msg': 'What you want'}
+#     html = render_template('searchtest.html', props=props)
+#     return html
 
-@app.route('/hello')
-def hello():
-    props = {'title': 'Step-by-Step Flask - hello', 'msg': 'Hello World.'}
-    html = render_template('hello.html', props=props)
-    return html
+# @app.route('/hello')
+# def hello():
+#     props = {'title': 'Step-by-Step Flask - hello', 'msg': 'Hello World.'}
+#     html = render_template('hello.html', props=props)
+#     return html
 
-@app.route('/users')
-def users():
-    props = {'title': 'Users List', 'msg': 'Users List'}
-    stmt = 'SELECT * FROM users'
-    users = db.query(stmt)
-    html = render_template('users.html', props=props, users=users)
-    return html
+# @app.route('/users')
+# def users():
+#     props = {'title': 'Users List', 'msg': 'Users List'}
+#     stmt = 'SELECT * FROM users'
+#     users = db.query(stmt)
+#     html = render_template('users.html', props=props, users=users)
+#     return html
 
-@app.route('/users/<int:id>')
-def user(id):
-    props = {'title': 'User Information', 'msg': 'User Information'}
-    stmt = 'SELECT * FROM users WHERE id = ?'
-    user = db.query(stmt, id, prepared=True)
-    html = render_template('user.html', props=props,user=user[0])
-    return html
+# @app.route('/users/<int:id>')
+# def user(id):
+#     props = {'title': 'User Information', 'msg': 'User Information'}
+#     stmt = 'SELECT * FROM users WHERE id = ?'
+#     user = db.query(stmt, id, prepared=True)
+#     html = render_template('user.html', props=props,user=user[0])
+#     return html
 
 
 @app.route("/result", methods=['POST'])
