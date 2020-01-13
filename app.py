@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 from bs4 import BeautifulSoup
 #import requests as req
-import MeCab
+#import MeCab
 import numpy as np
 from PIL import Image
 
