@@ -1,4 +1,4 @@
-en-core-web-sm==2.2.5
+-e https://github.com/explosion/spacy-models/releases/download/en_vectors_web_lg-2.2.5/en_vectors_web_lg-2.2.5.tar.gz#egg=en_core_web_sm
 alabaster==0.7.12
 asn1crypto==0.24.0
 astroid==2.2.5
